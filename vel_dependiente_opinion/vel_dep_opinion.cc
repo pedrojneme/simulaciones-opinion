@@ -128,14 +128,14 @@ int main(int argc,char *argv[]) {
 
 
   //la basica para todos:
-  double lista_velocidades[] = {0.0002,0.0004,0.0005,0.0007,0.001,0.002,0.003,0.004,0.005,0.008,0.007,0.009,0.01,0.02,0.03,0.05,0.07,0.08,0.1,0.2,0.3,0.5,0.8,1,2,3,5,10};
+  //double lista_velocidades[] = {0.0002,0.0004,0.0005,0.0007,0.001,0.002,0.003,0.004,0.005,0.008,0.007,0.009,0.01,0.02,0.03,0.05,0.07,0.08,0.1,0.2,0.3,0.5,0.8,1,2,3,5,10};
 
   //para cuando se quiera velocidades especificas:
-  //double lista_velocidades[] = {};
+  double lista_velocidades[] = {0.0011,0.00105,0.0012,0.0013,0.0014,0.0016,0.0017,0.0018};
 
 
 
-  for (int iteracion = 0; iteracion < 28 ; iteracion++) {
+  for (int iteracion = 0; iteracion < 8 ; iteracion++) {
 
     vel_media = lista_velocidades[iteracion];
 
@@ -177,6 +177,7 @@ int main(int argc,char *argv[]) {
         }
       }
     }
+
 
 
     /////////////////// asigno la distribucion de velocidades (se utiliza modo_distribucion_velocidad para decidir el modo a utilizar)/////////////////////////////////////
@@ -230,15 +231,16 @@ int main(int argc,char *argv[]) {
     }
 
 
-
+    for (int i = 0; i < 4; i++) {
+      pob_media[i] = 0;
+    }
+    tiempo_medicion = 0;
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////comienza el bucle temporal:///////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     t = 0;
-    tiempo_medicion = 0;
-
 
     while (t<(tiempo_final*100)) {
 
